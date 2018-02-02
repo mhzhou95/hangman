@@ -5,7 +5,7 @@ body {
   background-image: url("../images/bkgr.jpg");
   background-size: cover; }
 
-#haha {
+#start {
   height: 70px;
   width: 100px; }
 
@@ -18,7 +18,8 @@ body {
 
 #guess {
   height: 40px;
-  width: 60px; }
+  width: 60px;
+  font-size: 12pt; }
 
 #theword {
   margin-top: 24%;
@@ -26,7 +27,8 @@ body {
 
 #userinput {
   width: 30px;
-  height: 20px; }
+  height: 30px;
+  font-size: 20pt; }
 
 .boxcss {
   height: 40px;
@@ -41,7 +43,8 @@ body {
   height: 200px;
   height: 45px;
   border: 1px solid;
-  margin-top: 6px; }
+  margin-top: 6px;
+  margin-bottom: 5px; }
 
 #usedletters {
   width: 300px;

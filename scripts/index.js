@@ -1,4 +1,4 @@
-haha.addEventListener("click", function() {
+start.addEventListener("click", function() {
     document.getElementById('hider').style.display = "inline-block";
     document.getElementById('playdiv').style.display = "none";
     hangman()
@@ -20,47 +20,48 @@ rand = rand.split('');
 document.getElementById("hints").innerHTML = hints[index];
 
 function hangman() {
-    
+
     for (var i = 0; i < rand.length; i++) {
         let box = document.createElement('div');
         let letter = (rand[i]);
         box.setAttribute('class', 'boxcss');
         document.getElementById("theword").appendChild(box);
         guess.addEventListener("click", function() {
-            var input = userinput.value;
+            var input = userinput.value.toLowerCase();
+
             if (input == letter) {
                 box.innerHTML = letter;
                 check = true;
             }
-            
-            
+
+
         })
     }
-    guess.addEventListener("click", function(){
-      used.innerHTML += userinput.value +' ';
-      for (var i = 0; i < rand.length; i++) {
-        if(rand[i] == userinput.value){
-          life2 --;
-          rand[i] = false;
-        } 
-         if (life2 == 0 ) {
-          document.getElementById("main").innerHTML = " ";
-          document.body.style.backgroundImage = "url('images/victory.jpg')";
-          document.body.style.backgroundSize = "cover";
-          audiowin.play(1);
+    guess.addEventListener("click", function() {
+        used.innerHTML += userinput.value + ' ';
+        for (var i = 0; i < rand.length; i++) {
+            if (rand[i] == userinput.value.toLowerCase()) {
+                life2--;
+                rand[i] = false;
+            }
+            if (life2 == 0) {
+                document.getElementById("main").innerHTML = " ";
+                document.body.style.backgroundImage = "url('images/victory.jpg')";
+                document.body.style.backgroundSize = "cover";
+                audiowin.play(1);
+            }
+
         }
-        
-      }
-      
-      if(check == false)
-        { life--}
-      if (life<=0){
-        document.getElementById("main").innerHTML = " " ;
-        document.body.style.backgroundImage = "url('images/youdied.jpg')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "repeat-y";
-        audiolose.play();
-      }check = false;
-      
+
+        if (check == false) { life-- }
+        if (life <= 0) {
+            document.getElementById("main").innerHTML = " ";
+            document.body.style.backgroundImage = "url('images/youdied.jpg')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "repeat-y";
+            audiolose.play();
+        }
+        check = false;
+
     })
 }
