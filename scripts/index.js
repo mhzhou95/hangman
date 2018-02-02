@@ -4,15 +4,15 @@ start.addEventListener("click", function() {
     hangman()
 })
 
-var userinput = document.getElementById("userinput");
+
 var guess = document.getElementById("guess");
 var used = document.getElementById("usedletters");
 var life = 5;
 var check = false;
 var audiolose = new Audio("audio/youdied.mp3");
-var audiowin = new Audio("audio/youwin.mp3")
+var audiowin = new Audio("audio/youwin.mp3");
 var words = ["monitor", "program", "application", "keyboard", "javascript", "gaming", "network"];
-var hints = ["you are staring at it", "you make these", "you run these", "you tap on this", "Script", "do this to relax", "connect to this"]
+var hints = ["a screen", "you make these", "you run these", "you tap on this", "Script", "do this to relax", "connect to this"]
 var index = Math.floor(Math.random() * words.length);
 var rand = words[index];
 var life2 = rand.length;
